@@ -1,0 +1,37 @@
+
+# VAGRANT
+.vagrant/
+
+# IDE
+/nbproject/
+.idea/*
+
+# Composer
+composer.phar
+vendor/
+
+# Project
+.sass-cache
+assets/dist/
+bower_components/
+node_modules/
+
+_RESSOURCES/
+
+# Log files
+*.log
+
+# htaccess
+/.htaccess
+
+# dev
+package-lock.json
+composer.lock
+.DS_Store
+.vscode/
+/tmp
+
+# docker
+/docker/wp-app
+/docker/wp-data
+/docker/db-data

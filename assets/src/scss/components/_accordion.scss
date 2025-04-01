@@ -1,0 +1,14 @@
+.accordion {
+  .accordion-item {
+    .accordion-header {
+      .accordion-button {
+        border-bottom: 1px solid #FFB800 !important;
+        font-size: 1.5rem;
+      }
+      .accordion-button:not(.collapsed) {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

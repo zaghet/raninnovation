@@ -1,0 +1,19 @@
+section.block__text-cards{
+  background-color: white;
+  
+  &::before {
+    content: url(@/img/hexagons-1.svg);
+    position: absolute;
+    left: 0; 
+    bottom: 0;
+  } 
+
+  .left {
+    @include media-breakpoint-up(lg) {
+      padding-right: 5rem;
+    }
+  }
+}
+  
+  
+  

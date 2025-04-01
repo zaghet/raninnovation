@@ -1,0 +1,37 @@
+// Sizes
+.fs-xs {
+    font-size: $font-size-xs !important;
+}
+.fs-xxs {
+    font-size: $font-size-xxs !important;
+}
+.fs-md {
+    font-size: $font-size-md !important;
+}
+.fs-sm {
+    font-size: $font-size-sm !important;
+}
+.fs-lg {
+    font-size: $font-size-lg !important;
+}
+.fs-xl {
+    font-size: $font-size-xl !important;
+}
+.fs-xxl {
+    font-size: $font-size-xxl !important;
+}
+
+// Colors
+.text-bg-success {
+    color: $white !important;
+}
+
+// Weight
+.h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    font-weight: 600;
+}
+
+// Spacing
+.h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    letter-spacing: 2px;
+}

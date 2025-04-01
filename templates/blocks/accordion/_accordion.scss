@@ -1,0 +1,42 @@
+section.block__accordion {
+  overflow: hidden;
+
+  .accordion-button, .accordion-item {
+    background-color: white !important;
+  }
+  
+  h2 {
+    color: $gray-900;
+  }
+
+  .left {
+    padding: 5rem;
+    background-color: #FFB800;
+
+    &::after {
+      content: url(@/img/hexagons-2.svg); 
+      position: absolute;
+      left: 0; 
+    }
+  }
+
+  .right {
+    padding: 3rem 5rem;
+    background-color: white;
+  }
+
+  .accordion {
+    &-item {
+      color: $dark;
+    }
+    &-body {
+      color: $dark;
+      a {
+        text-decoration: underline;
+      }
+    }
+    &-footer {
+      color: $dark;
+    }
+  }
+}

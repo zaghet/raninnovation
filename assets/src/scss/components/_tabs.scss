@@ -1,0 +1,9 @@
+.nav-tabs{
+    .nav-link{
+        color: $gray-600;
+    }
+    .nav-link.active{
+        border: 0 !important;
+        border-bottom: 2px solid $gray-900 !important;
+    }
+}

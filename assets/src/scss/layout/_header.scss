@@ -1,0 +1,75 @@
+.site-header {
+    
+    // &__top{}
+
+    &__bottom{
+
+        .navbar-nav {
+            .nav-link {
+                --bs-navbar-nav-link-padding-x: 1.5rem !important;
+            }
+        }
+
+        .nav-bottom{
+            li{
+                @extend .ms-3;
+
+                .openid-connect-login-button{
+                    @extend .m-0, .btn, .btn-secondary, .btn-lg;
+
+                    a.button{
+                        padding: 0 !important;
+                        font-weight: 500 !important;
+                    }
+                    
+
+                    @include media-breakpoint-down(md) {
+                        --bs-btn-padding-y: .2rem; 
+                        --bs-btn-padding-x: .5rem; 
+                        --bs-btn-font-size: 1rem;
+                    }
+                }
+
+                .icon-user.iconsize-5x{
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.5rem !important;
+                        padding: .18rem !important;
+                    }
+                }
+            }
+        }
+
+        .wc-block-mini-cart[style~="hidden"]{
+            display: none !important;
+        }
+
+        .wc-block-mini-cart__button{
+            // --bs-btn-padding-x: 1rem;
+            // --bs-btn-padding-y: 0.475rem;
+            @extend .btn, .btn-secondary, .btn-lg;
+
+            @include media-breakpoint-down(md) {
+                padding: 0.3rem 0.5rem !important;
+            }
+
+            .wc-block-mini-cart__quantity-badge{
+                // @extend .icon-cart;
+                // font-size: 1.2rem;
+
+                svg{
+                    display: none;
+                }
+                &:before{
+                    font-family: 'labevo_icons';
+                    font-size: 1.5rem;
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.3rem;
+                        line-height: 1.7rem;
+                    }
+                }
+            }
+
+        
+        }
+    }
+}

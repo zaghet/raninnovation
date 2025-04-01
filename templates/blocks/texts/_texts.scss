@@ -1,0 +1,10 @@
+.block__texts {
+  .two-columns {
+    @include media-breakpoint-up(md) {
+      column-count: 2;
+    column-gap: 30px;
+
+    }
+    
+  }
+}

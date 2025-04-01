@@ -1,0 +1,11 @@
+.offcanvas{
+    padding: 0;
+    
+    .offcanvas-header{
+        padding-bottom: 0;
+        
+        .btn-close {
+            padding: initial;
+        }
+    }
+}

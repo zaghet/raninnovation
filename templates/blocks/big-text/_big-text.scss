@@ -1,0 +1,18 @@
+.block__big-text {
+  overflow: hidden;
+  padding: 10rem 0 3rem 0;
+  @include media-breakpoint-up(md) {
+    padding: 10rem 0;
+  }
+  &:before {
+    // content: url("@/img/img-smoke.png");
+    position: absolute;
+    top: 0;
+    left: -360px;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      left: -110px;
+      top: -10px;
+    }
+  }
+}

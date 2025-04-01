@@ -1,0 +1,11 @@
+section.block__offcanvas-card {
+  .offcanvas-body {
+    h6 {
+      color: var(--bs-gray);
+      margin: 2rem 0 !important;
+      &:first-child {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+body.home {
+  .site-header__bottom {
+    @extend .w-100, .z-3;
+  }
+}

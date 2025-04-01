@@ -1,0 +1,1 @@
+import "./_offcanvas-card.scss";

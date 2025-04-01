@@ -1,0 +1,43 @@
+// abstracts
+@import "abstracts/variables";
+
+// vendors
+@import "node_modules/bootstrap/scss/bootstrap";
+$bootstrap-icons-font-dir: "/node_modules/bootstrap-icons/font/fonts";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons";
+@import "node_modules/swiper/swiper-bundle";
+@import "node_modules/simplebar/dist/simplebar";
+
+// base
+@import "base/fonts",
+        "base/base",
+        "base/typography";
+
+// layout
+@import "layout/header",
+        "layout/footer",
+        "layout/forms",
+        "layout/grid",
+        "layout/block";
+
+// components
+@import "components/accordion";
+@import "components/badge";
+@import "components/buttons";
+@import "components/modal";
+@import "components/navbar";
+@import "components/tabs";
+@import "components/slider";
+@import "components/breadcrumb";
+@import "components/offcanvas";
+@import "components/input";
+@import "components/cards";
+@import "components/scroll";
+
+// pages
+@import "pages/front-page",
+        "pages/page";
+
+
+// blocks
+// @import "../../../templates/blocks/**/*.scss";

@@ -1,0 +1,70 @@
+services:
+  wp:
+    #build:
+    #  context: ./
+    #  dockerfile: ./dockerfile
+    image: twowhub/wordpress:latest
+    restart: always
+    ports:
+      - ${IP}:${PORT}:80 # change ip if required
+    volumes:
+      - ./config/wp_php.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./wp-app:/var/www/html # Full wordpress project
+      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
+      - ../:/var/www/html/wp-content/themes/${COMPOSE_PROJECT_NAME}
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: "${DB_NAME}"
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
+    networks:
+      - pubblica
+#    depends_on:
+#      - db
+#    links:
+#      - db
+
+  pma:
+    image: phpmyadmin:latest  # https://hub.docker.com/_/phpmyadmin
+    environment:
+      # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+      UPLOAD_LIMIT: 50M
+    ports:
+      - ${IP}:8081:80
+    volumes:
+     - ./config/pma_php.ini:/usr/local/etc/php/conf.d/conf.ini
+     - ./config/pma_config.php:/etc/phpmyadmin/config.user.inc.php
+    networks:
+      - pubblica
+#    links:
+#      - db:db
+
+
+  db:
+    image: mariadb:10.6.20 # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    # platform: linux/x86_64  # Uncomment if your machine is running on arm (ex: Apple Silicon processor)
+    ports:
+      - ${IP}:3306:3306 # change ip if required
+    command: [
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci'
+    ]
+    restart: always
+    volumes:
+      - ./wp-data:/docker-entrypoint-initdb.d
+      - ./db-data:/var/lib/mysql
+    networks:
+      - pubblica
+    environment:
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+
+volumes:
+  db_data:
+
+networks:
+  pubblica:
+    driver: bridge

@@ -1,0 +1,280 @@
+/**
+ * Bootstrap customised
+ *
+ * @see https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+ */
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-100: #fafafa !default;
+$gray-200: #f3f3f3 !default;
+$gray-300: #eaeaea !default;
+$gray-400: #d9d9d9 !default;
+$gray-500: #bdbdbd !default;
+$gray-600: #8d8d8d !default;
+$gray-700: #6b6b6b !default;
+$gray-800: #231F20 !default;
+$gray-900: #2b2b2b !default;
+$black: #000 !default;
+$dark: $gray-900 !default;
+$yellow: #FFBC00;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900,
+) !default;
+// scss-docs-end gray-colors-map
+// fusv-enable
+
+// scss-docs-start color-variables
+$blue: #0054a6 !default;
+$blue_ice: #78a3b9 !default; // aggiunto
+$blue_dark: #16254c !default; // aggiunto
+$indigo: #6a3252 !default;
+$purple: #9665aa !default;
+$pink: #f05b89 !default;
+$red: #ef404a !default;
+$rose: #fabeaf !default; // aggiunto
+$orange: #f99d1c !default;
+$yellow: #ffde17 !default;
+$green: #25a55e !default;
+$green_light: #9aca3c !default; // aggiunto
+$teal: #60c3ad !default;
+$teal_dark: #007b84 !default; // aggiunto
+$cyan: #27aae1 !default;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "blue": $blue,
+  "blue-ice": $blue_ice,
+  "blue-dark": $blue_dark,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "rose": $rose,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "green-light": $green_light,
+  "teal": $teal,
+  "teal-dark": $teal_dark,
+  "cyan": $cyan,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+) !default;
+// scss-docs-end colors-map
+
+// scss-docs-start theme-color-variables
+$primary: $yellow !default;
+$secondary: $white !default;
+$light: $gray-200 !default;
+$light-bg-subtle: #f5f5f5 !default;
+
+// scss-docs-start theme-color-variables
+$success:       $teal !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) !default;
+// scss-docs-end theme-colors-map
+
+$body-bg: #EEEEEE;
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: "Ubuntu", sans-serif;
+
+$font-size-base: 1.125rem !default; // 18px
+$font-size-xxxl: $font-size-base * 2 !default; // 32px
+$font-size-xxl: $font-size-base * 1.5 !default; // 24px
+$font-size-xl: $font-size-base * 1.25 !default; // 20px
+$font-size-lg: $font-size-base * 1.125 !default; // 18px
+$font-size-md: $font-size-base * 0.93 !default; // 15px
+$font-size-sm: $font-size-base * 0.875 !default; // 14px
+$font-size-xs: $font-size-base * 0.81 !default; // 13px
+$font-size-xxs: $font-size-base * 0.75 !default; // 12px
+
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-base: $font-weight-medium !default;
+
+$line-height-base: 1.375 !default; // 22px
+$line-height-sm: 2.5 !default; // 40px
+$line-height-lg: 3.125 !default; // 50px
+
+$h1-font-size: $font-size-base * 3.125 !default; // 50px
+$h2-font-size: $font-size-base * 2.375 !default; // 38px
+$h3-font-size: $font-size-base * 2 !default; // 32px
+$h4-font-size: $font-size-base * 1.75 !default; // 28px
+$h5-font-size: $font-size-base * 1.375 !default; // 22px
+$h6-font-size: $font-size-base * 1.125 !default; // 18px
+
+$headings-font-weight: 500 !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  // 4px
+  2: $spacer * 0.5,
+  // 8px
+  3: $spacer,
+  // 16px
+  4: $spacer * 1.5,
+  // 24px
+  5: $spacer * 2,
+  // 32px
+  6: $spacer * 2.5,
+  // 40px
+  7: $spacer * 3,
+  // 48px
+  8: $spacer * 3.5,
+  // 56px
+  9: $spacer * 4,
+  // 64px
+  10: $spacer * 5,
+  // 80px
+  11: $spacer * 6.25,
+  // 100px
+  22: $spacer * 10,
+  // 200px
+  "neg-2": -$spacer * 0.5,
+  "neg-3": -$spacer,
+  "neg-4": -$spacer * 1.5,
+);
+
+// Navbar
+$navbar-padding-y: $spacer !default;
+
+// Links
+$link-hover-color: $gray-700 !default;
+$link-focus-color: $gray-900 !default;
+
+$border-radius-sm: 0.5rem !default; // 8px
+$border-radius: 1.5rem !default; // 24px
+$border-radius-lg: 2rem !default; // 32px
+
+// Buttons
+
+$btn-font-weight: $font-weight-medium;
+$btn-line-height: $font-size-base * 1.5 !default;
+
+$btn-padding-y-sm: 0.5rem !default; // 8px
+$btn-padding-x-sm: 1rem !default; // 16px
+$btn-font-size-sm: 0.75rem; // 12px
+$btn-border-radius-sm: 0rem !default; // 14px
+
+$btn-padding-y: 0.75rem !default; // 10px
+$btn-padding-x: 1.5rem !default; // 20px
+$btn-font-size: 1rem; // 14px
+$btn-border-radius: 0rem !default; // 16px
+
+$btn-padding-y-lg: 0.75rem !default; // 10px
+$btn-padding-x-lg: 1.5rem !default; // 24px
+$btn-font-size-lg: 1rem !default;
+$btn-border-radius-lg: 0rem !default; // 20px
+
+$box-shadow-sm: none;
+$box-shadow: none;
+
+//Tabs
+$nav-tabs-border-radius: 0 !default;
+$nav-link-padding-y: 1rem !default;
+$nav-tabs-link-active-border-color: $gray-900 !important;
+
+// Hr
+$hr-height: 1px !default;
+$hr-color: $gray-500 !default;
+$hr-margin-y: 2rem !default;
+
+// Navs
+$nav-tabs-link-active-color: $gray-900 !default;
+
+//Accordion
+$accordion-padding-y: 22px !default;
+$accordion-padding-x: 0rem !default;
+$accordion-color: $gray-900 !default;
+$accordion-border-width: 0 !default;
+$accordion-border-color: $gray-500 !default;
+$accordion-border-radius: 0;
+$accordion-button-active-bg: $body-bg;
+$accordion-button-active-color: $gray-900;
+$accordion-body-padding-y: 24px;
+$accordion-button-icon:         url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 12H19.5M12.5 5V19' stroke='%232B2B2B' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !default;
+$accordion-button-active-icon:  url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.104 7.771c-.08.08-.091.107-.091.229 0 .122.011.149.091.229l.091.091h9.61l.091-.091c.08-.08.091-.107.091-.229 0-.122-.011-.149-.091-.229l-.091-.091h-9.61l-.091.091' fill-rule='evenodd' fill='%23000'/%3E%3C/svg%3E") !default;
+$accordion-button-focus-box-shadow: none;
+
+
+// Breadcrumbs
+
+$breadcrumb-font-size:              $font-size-sm !default;
+// $breadcrumb-padding-y:              0 !default;
+// $breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding-x:         .5rem !default;
+$breadcrumb-margin-bottom:          2.6rem !default;
+// $breadcrumb-bg:                     null !default;
+// $breadcrumb-divider-color:          var(--#{$}secondary-color) !default;
+// $breadcrumb-active-color:           var(--#{$prefix}secondary-color) !default;
+// $breadcrumb-divider:                quote("/") !default;
+// $breadcrumb-divider-flipped:        $breadcrumb-divider !default;
+// $breadcrumb-border-radius:          null !default;
+// scss-docs-end breadcrumb-variables
+
+
+// Modals
+
+// scss-docs-start modal-variables
+$modal-inner-padding:               $spacer !default;
+
+
+// Offcanvas
+
+$offcanvas-horizontal-width:        480px !default;

@@ -1,0 +1,9 @@
+section.block__form {
+    &::after {
+        content: ""; 
+        background-image: url("/static/img/form-hexagons.svg"); 
+        position: absolute;
+        right: 0; 
+        display: block;
+    }
+}

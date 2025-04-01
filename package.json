@@ -1,0 +1,49 @@
+{
+	"name": "twow-starter-theme",
+	"private": true,
+	"version": "1.0.0",
+	"description": "A WordPress Starter Theme built with Bootstrap 5.",
+	"homepage": "https://github.com/twowrepo/twow-starter-theme",
+	"author": "twow.it",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/twowrepo/twow-starter-theme.git"
+	},
+	"type": "module",
+	"scripts": {
+		"kit": "vite serve --host",
+		"kit:win": "vite serve --host --config vite.config.win.js",
+		"dev": "vite build --watch --sourcemap true --minify false --mode development ",
+		"dev:win": "vite build --watch --sourcemap true --minify false --mode development --config vite.config.win.js",	
+		"dev:remote": "vite build --sourcemap true --minify false --mode development",
+		"dev:remote:win": "vite build --sourcemap true --minify false --mode development --config vite.config.win.js",
+		"dev:reset": "vite build --watch --emptyOutDir --sourcemap false --minify false --mode development",
+		"dev:reset:win": "vite build --watch --emptyOutDir --sourcemap false --minify false --mode development --config vite.config.win.js",
+		"build": "vite build",
+		"build:win": "vite build --config vite.config.win.js"
+	},
+	"devDependencies": {
+		"rimraf": "5.0.5",
+		"sass": "1.76.0",
+		"vite": "^5.4.10",
+		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-compression2": "^1.3.3",
+		"vite-plugin-sass-glob-import": "^4.0.0"
+	},
+	"dependencies": {
+		"@popperjs/core": "^2.11.8",
+		"animate.css": "^4.1.1",
+		"aos": "^2.3.4",
+		"bootstrap": "5.3.3",
+		"bootstrap-icons": "^1.11.3",
+		"choices.js": "^11.0.2",
+		"gsap": "^3.12.5",
+		"imagesloaded": "^5.0.0",
+		"isotope-layout": "^3.0.6",
+		"locomotive-scroll": "^4.1.4",		
+		"ol": "^10.2.1",
+		"resize-observer-polyfill": "^1.5.1",
+		"simplebar": "^6.2.7",
+		"swiper": "^11.1.14"
+	}
+}

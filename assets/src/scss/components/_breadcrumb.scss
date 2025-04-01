@@ -1,0 +1,11 @@
+.container-breadcrumb{
+    ol{
+        @extend .breadcrumb;
+        li{
+            @extend .breadcrumb-item;
+            &.breadcrumb_last{
+                @extend .active;
+            }
+        }
+    }
+}

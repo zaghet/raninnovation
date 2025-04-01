@@ -1,0 +1,85 @@
+//GRAVITY
+.gform_wrapper {
+  .gform_heading {
+    display: none !important;
+  }
+  .gform-body {
+    .gfield {
+      .gfield_label {
+        font-weight: 600;
+      }
+    }
+  }
+  .gform-footer {
+    input.gform_button {
+      background-color: $gray-800 !important;
+      border-radius: 20px !important;
+      padding: 0.75rem 3rem 0.75rem 2rem !important;
+      width: 100% !important;
+      @include media-breakpoint-up(sm) {
+        width: fit-content !important;
+      }
+    }
+  }
+  .grecaptcha-badge{
+    visibility: hidden !important;
+  }
+}
+
+// Contatti
+
+// Newsletter
+.footer-form {
+  form {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    input:not([type="checkbox"]) {
+      height: 48px !important;
+    }
+    .gform_body {
+      flex-basis: 100%;
+      @include media-breakpoint-up(sm) {
+        flex-basis: 60%;
+      }
+      .gform_fields {
+        gap: 1rem;
+        .gfield {
+          .ginput_container_email {
+            input {
+              border: 1px solid $gray-800 !important;
+              border-radius: 20px;
+              margin-top: 0px !important;
+              @include media-breakpoint-up(sm) {
+                border-top: 1px solid $gray-800;
+                border-bottom: 1px solid $gray-800;
+                border-left: 1px solid $gray-800;
+                border-right: 0px !important;
+                border-radius: 20px 0 0 20px !important;
+                padding-right: 0 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .gform_footer {
+      flex-basis: 100%;
+      @include media-breakpoint-up(sm) {
+        margin: 0;
+        flex-basis: 40%;
+      }
+
+      .gform_button {
+        background-color: $gray-800 !important;
+        border-radius: 20px !important;
+        padding: 0.75rem 3rem 0.75rem 2rem !important;
+        width: 100% !important;
+        @include media-breakpoint-up(sm) {
+          margin-left: -16px !important;
+          width: fit-content !important;
+        }
+      }
+    }
+  }
+}
