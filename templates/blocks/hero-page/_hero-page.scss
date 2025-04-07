@@ -56,6 +56,8 @@ section.block__hero-page {
             bottom: -5rem;
             padding-bottom: 20px;
             background-color: transparent !important;
+            max-width: 100%;
+            margin: 0;
 
         @include media-breakpoint-down(lg) {
             position: relative;

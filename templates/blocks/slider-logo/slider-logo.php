@@ -42,13 +42,13 @@ $button = get_field('slider-logo_btn');
 ?>
 
 <section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="container">
-        <?php if ($title) : ?>
+    <div class="container d-flex flex-column align-items-center gap-4">
+        <?php if ($title) : ?> 
             <h2 class="slider-title text-center"><?php echo esc_html($title); ?></h2>
         <?php endif; ?>
 
         <?php if ($text) : ?>
-            <p class="slider-text text-center"><?php echo esc_html($text); ?></p>
+            <div class="slider-text text-center"><?php echo wp_kses_post($text); ?></div>
         <?php endif; ?>
 
         <?php if ($slider) : ?>

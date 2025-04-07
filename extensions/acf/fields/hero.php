@@ -44,7 +44,22 @@ add_action( 'acf/include_fields', function() {
 					'id' => '',
 				),
 				'return_format' => 'array', // Ritorna un array con URL, titolo e target
+		),
+		array(
+			'key' => 'field_hero_video_url',
+			'label' => 'Link Video di Background (YouTube)',
+			'name' => 'hero_video_url',
+			'type' => 'url',
+			'instructions' => 'Inserisci il link del video YouTube che vuoi usare come sfondo.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
 			),
+			'placeholder' => 'https://www.youtube.com/watch?v=ID_DEL_VIDEO',
+		),
 		// 	'key' => 'field_66f2af429d47b',
 		// 	'label' => 'Testo',
 		// 	'name' => 'hero_text',

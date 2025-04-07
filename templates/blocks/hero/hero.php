@@ -37,14 +37,42 @@ if( isset($block['full_height']) ) {
 $title = get_field('hero_title');
 $button = get_field('hero_button');
 
-
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
+
+<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?> video-container">
+    <?php 
+    $video_url = get_field('hero_video_url'); 
+    if ($video_url) :
+        // Estrai l'ID del video
+        preg_match('/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/', $video_url, $matches);
+        if (!empty($matches[1])) :
+            $video_id = $matches[1];
+    ?>
+        <div class="video-wrapper">
+            <!-- <iframe src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>" frameborder="0" allowfullscreen></iframe> -->
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playsinline=1&disablekb=1" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen" 
+                    allowfullscreen>
+                </iframe>
+        </div>
+    <?php 
+        endif;
+    endif; 
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-lg-6">
-                <h1 class="mb-6"><?php echo esc_html($title); ?></h1>
-                <?php if ($button && isset($button['url'], $button['title'])) : ?>
+                <?php if (!empty($title)) : ?>
+                    <h1 class="mb-6 text-white"><?php echo esc_html($title); ?></h1>
+                <?php endif; ?>
+
+                <?php 
+                if (!empty($button) && is_array($button) && isset($button['url'], $button['title'])) : ?>
                     <a href="<?php echo esc_url($button['url']); ?>" 
                        class="btn btn-primary animate__animated animate__delay-1s"
                        data-scroll data-scroll-class="animate__fadeInLeft" 

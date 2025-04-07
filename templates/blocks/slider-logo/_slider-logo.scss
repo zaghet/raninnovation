@@ -31,14 +31,19 @@ section.block__slider-logo {
             }
         }
 
-        // Paginazione (puntini)
+        // Paginazione 
         .swiper-pagination {
-            position: absolute;
-            bottom: 10px;
-            // left: 50%;
+
+            display: none; // Nasconde la paginazione di default
+            @media (max-width: 1024px) {
+                display: flex; // Mostra la paginazione solo su schermi più piccoli
+            }
+            
+            position: relative;
+            left: 30% !important;
             // transform: translateX(-50%);
-            display: flex;
             justify-content: center;
+            margin-top: 50px;
 
             .swiper-pagination-bullet {
                 width: 10px;

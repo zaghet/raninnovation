@@ -2,9 +2,14 @@
   .two-columns {
     @include media-breakpoint-up(md) {
       column-count: 2;
-    column-gap: 30px;
-
+      column-gap: 30px;
     }
-    
+  }
+  &::before {
+    content: url(/static/img/hexagons-two-columns.svg); 
+    position: absolute;
+    right: 0; 
+    display: block;
+    z-index: -1;
   }
 }

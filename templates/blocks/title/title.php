@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Texts Block Template.
+ * Title Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -19,7 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'block block__texts position-relative py-7 py-lg-10';
+$class_name = 'block block__title position-relative py-7 py-lg-10';
 if( !empty($block['className']) ) {
     $class_name .= ' ' . $block['className'];
 }
@@ -34,21 +34,18 @@ if( isset($block['full_height']) ) {
 }
 
 //  get field
-$title = get_field('texts_title');
-$texts = get_field('texts');
+$title = get_field('title_title');
+$text = get_field('title_text');
 
 ?>
 <section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 class="mb-5"><?php echo esc_html($title); ?></h2>
-                <div class="two-columns animate__animated animated__delay-1s" data-scroll
-                    data-scroll-class="animate__fadeInUp" style="--animate-delay:0.5s;">
-                    <?php echo wpautop($texts); ?>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container-xs">
+        <?php if ($title) : ?> 
+            <h2 class="text-center"><?php echo esc_html($title); ?></h2>
+        <?php endif; ?>
 
+        <?php if ($text) : ?>
+            <div class="text-center"><?php echo wp_kses_post($text); ?></div>
+        <?php endif; ?>
+    </div>
 </section>

@@ -10,6 +10,10 @@ class Content extends Main {
 	  	// wrapper main content
 		add_action( 'tst_page_content_before', [$this, 'main_start'], 1 );
 		add_action( 'tst_page_content_after', [$this, 'main_end'], 999 );
+		
+		// Hook Archivio Servizi
+		// add_action('tst_service_archive_before_loop', [$this, 'render_service_hero'], 2);
+		// add_action('tst_service_archive_after_loop', [$this, 'render_service_sections'], 5);
 	  
 		// content
 		add_action( 'tst_page_content', [$this, 'content_output'], 1 );
@@ -23,8 +27,17 @@ class Content extends Main {
 		});
 	}
 
+	// public function render_service_hero() {
+	// 	if (is_post_type_archive('service')) {
+	// 		the_content(); // Stampa il contenuto della hero
+	// 	}
+	// }
+
 	public function loop_content_partial($template, $post_type) {
-		if( file_exists( TST_PARTIAL_PATH . '/' . self::PARTIAL_LOOP_PREFIX . '-' . $post_type . '.php' ) ){
+		if ( $post_type === 'service' && file_exists( TST_PARTIAL_PATH . '/card-service.php' ) ) {
+			return 'service';
+		}
+		if ( file_exists( TST_PARTIAL_PATH . '/' . self::PARTIAL_LOOP_PREFIX . '-' . $post_type . '.php' ) ) {
 			return $post_type;
 		}
 		return $template;
@@ -93,9 +106,11 @@ class Content extends Main {
 		
 		if( is_front_page() ) {
 			$template = 'templates/content-home';
-		}elseif ( is_home() || is_archive() ){
+		} elseif ( is_post_type_archive('service') ) {
+			$template = 'templates/content-service';
+		} elseif ( is_home() || is_archive() ) {
 			$template = 'templates/content-loop';
-		}elseif ( is_search() ) {
+		} elseif ( is_search() ) {
 			$template = 'templates/content-loop';
 		} elseif ( is_404() ) {
 			$template = 'templates/content-404';

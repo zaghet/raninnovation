@@ -18,7 +18,7 @@ if ( isset($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'block block__accordion animate__animated py-7 py-lg-10';
+$class_name = 'block block__accordion animate__animated';
 if( isset($block['className']) ) {
     // $class_name .= ' ' . $block['className'];
 }

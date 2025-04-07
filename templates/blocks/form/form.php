@@ -38,17 +38,26 @@ if( $is_preview ) {
 }
 
 
+$title = get_field('form_title');
+$text = get_field('form_text');
 $form = get_field('form');
-$contacts = get_field('contacts');
-$email_link = $contacts['email'];
-$address_link = $contacts['indirizzo'];
+// $contacts = get_field('contacts');
+// $email_link = $contacts['email'];
+// $address_link = $contacts['indirizzo'];
+// $form = get_field('form_title');
 
 ?>
 <section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
-    <div class="container">
+    <div class="container py-10">
         <div class="row">
             <div class="col-xs-12 col-md-7 col-lg-8 mb-5 mb-md-0">
-                <div class="px-lg-5">
+                <h1 class="mb-5"><?php echo esc_html($title); ?></h1>
+
+                <?php if (!empty($text)) : ?>
+                    <div class="mb-5"><?php echo wp_kses_post($text); ?></div>
+                <?php endif; ?>
+
+                <div class="p-0">
                     <?php echo do_shortcode($form);?>
                 </div>
             </div>
