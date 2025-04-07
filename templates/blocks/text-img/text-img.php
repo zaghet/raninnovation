@@ -19,7 +19,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'block block__text-img position-relative py-7 py-lg-10';
+$class_name = 'block block__text-img position-relative';
 if( !empty($block['className']) ) {
     $class_name .= ' ' . $block['className'];
 }
@@ -33,28 +33,49 @@ if( isset($block['full_height']) ) {
     $class_name .= ' vh-100';
 }
 
-//  get field
 $icon = get_field('text-img_icon');
 $text = get_field('text-img_text');
 $img = get_field('text-img_image');
-
+$bg_color = get_field('background_color');
+$reverse_sections = get_field('reverse_sections');
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
+
+<section <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?>">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-md-5 p-10">
-                <?php if (!empty($icon)): ?>
-                    <img src="<?php echo esc_url($icon['url']); ?>" class="icon pb-5" alt="<?php echo esc_attr($icon['alt']); ?>" />
-                <?php endif; ?>
-                <?php if ($text): ?>
-                    <div><?php echo wp_kses_post($text); ?></div>
-                <?php endif; ?>
-            </div>
-            <div class="col-xs-12 col-md-7 p-0">
-                <?php if (!empty($img)): ?>
-                    <img src="<?php echo esc_url($img['url']); ?>" class="image" alt="<?php echo esc_attr($img['alt']); ?>" />
-                <?php endif; ?>
-            </div>
+            <?php if ($reverse_sections): // Se il campo è vero, inverte l'ordine ?>
+                <!-- Secondo div (col-md-7) prima -->
+                <div class="col-xs-12 col-md-7 p-0">
+                    <?php if (!empty($img)): ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" class="w-100 h-100 object-fit-cover" alt="<?php echo esc_attr($img['alt']); ?>" />
+                    <?php endif; ?>
+                </div>
+                <!-- Primo div (col-md-5) dopo -->
+                <div class="col-xs-12 col-md-5 p-10 <?php echo esc_attr('bg-' . $bg_color); ?>">
+                    <?php if (!empty($icon)): ?>
+                        <img src="<?php echo esc_url($icon['url']); ?>" class="icon pb-5" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                    <?php endif; ?>
+                    <?php if ($text): ?>
+                        <div><?php echo wp_kses_post($text); ?></div>
+                    <?php endif; ?>
+                </div>
+            <?php else: // Ordine normale ?>
+                <!-- Primo div (col-md-5) prima -->
+                <div class="col-xs-12 col-md-5 p-10 <?php echo esc_attr('bg-' . $bg_color); ?>">
+                    <?php if (!empty($icon)): ?>
+                        <img src="<?php echo esc_url($icon['url']); ?>" class="icon pb-5" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                    <?php endif; ?>
+                    <?php if ($text): ?>
+                        <div><?php echo wp_kses_post($text); ?></div>
+                    <?php endif; ?>
+                </div>
+                <!-- Secondo div (col-md-7) dopo -->
+                <div class="col-xs-12 col-md-7 p-0">
+                    <?php if (!empty($img)): ?>
+                        <img src="<?php echo esc_url($img['url']); ?>" class="w-100 h-100 object-fit-cover" alt="<?php echo esc_attr($img['alt']); ?>" />
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>

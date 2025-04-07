@@ -49,15 +49,14 @@ $button = get_field('hero_button');
             $video_id = $matches[1];
     ?>
         <div class="video-wrapper">
-            <!-- <iframe src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>" frameborder="0" allowfullscreen></iframe> -->
+            <div class="video-container">
                 <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playsinline=1&disablekb=1" 
+                    src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&playsinline=1&disablekb=1&loop=1&playlist=<?php echo esc_attr($video_id); ?>" 
                     frameborder="0" 
                     allow="autoplay; fullscreen" 
                     allowfullscreen>
                 </iframe>
+            </div>
         </div>
     <?php 
         endif;
