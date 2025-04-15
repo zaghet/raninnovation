@@ -13,7 +13,7 @@ class Asset extends Main {
 		add_filter( 'script_loader_tag', [$this,'add_module_type_attribute'], 10, 3 );
 		add_filter( 'style_loader_tag', [$this,'add_module_type_attribute'], 10, 3 );
 
-		add_action('wp_enqueue_scripts', [$this,'cleaning_wordpress'], 100);
+		add_action('s', [$this,'cleaning_wordpress'], 100);
 
 	}
 	

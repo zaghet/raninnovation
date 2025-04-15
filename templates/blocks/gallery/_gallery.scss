@@ -1,1 +1,15 @@
-section.block__gallery {}
+section.block__gallery {
+    .mySwiper {
+        width: 100%;
+        height: auto;
+      
+        .swiper-slide {
+          text-align: center;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
+      
+}

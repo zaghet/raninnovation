@@ -36,6 +36,8 @@ if( isset($block['full_height']) ) {
 // Get fields
 $title = get_field('title_gallery');
 $text = get_field('text_gallery');
+$slider = get_field('slider_gallery');
+$image = get_field('image_gallery');
 
 ?>
 
@@ -43,7 +45,7 @@ $text = get_field('text_gallery');
     <div class="container">
         <div class="row">
             <?php if ($title || $text): ?>
-                <div class="">
+                <div class="col-12 mb-4 text-center">
                     <?php if ($title): ?>
                         <h2 class="h3"><?php echo esc_html($title); ?></h2>
                     <?php endif; ?>
@@ -53,29 +55,26 @@ $text = get_field('text_gallery');
                 </div>
             <?php endif; ?>
 
-            <div class="">
-                <?php if (have_rows('slides')): ?>
-                    <div class="acf-swiper-gallery swiper mySwiper">
-                        <div class="swiper-wrapper">
-                            <?php while (have_rows('slides')): the_row(); 
-                                $slide_image = get_sub_field('image');
-                            ?>
-                                <div class="swiper-slide">
-                                    <?php if ($slide_image): ?>
-                                        <img src="<?php echo esc_url($slide_image['url']); ?>" alt="<?php echo esc_attr($slide_image['alt']); ?>" />
-                                    <?php endif; ?>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-
-                        <!-- Swiper Controls -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
+            <?php if (have_rows('slider_gallery')): ?>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <?php while (have_rows('slider_gallery')): the_row(); 
+                            $slide_image = get_sub_field('image');
+                        ?>
+                            <div class="swiper-slide">
+                                <?php if ($slide_image): ?>
+                                    <img src="<?php echo esc_url($slide_image['url']); ?>" alt="<?php echo esc_attr($slide_image['alt']); ?>" />
+                                <?php endif; ?>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                <?php endif; ?>
-            </div>
+
+                    <!-- Swiper Controls -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
-
