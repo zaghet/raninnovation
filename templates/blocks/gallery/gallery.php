@@ -37,7 +37,7 @@ if( isset($block['full_height']) ) {
 $title = get_field('title_gallery');
 $text = get_field('text_gallery');
 $slider = get_field('slider_gallery');
-$image = get_field('image_gallery');
+$image = get_field('image');
 
 ?>
 
@@ -59,11 +59,11 @@ $image = get_field('image_gallery');
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <?php while (have_rows('slider_gallery')): the_row(); 
-                            $slide_image = get_sub_field('image');
+                            $image = get_sub_field('image')
                         ?>
                             <div class="swiper-slide">
-                                <?php if ($slide_image): ?>
-                                    <img src="<?php echo esc_url($slide_image['url']); ?>" alt="<?php echo esc_attr($slide_image['alt']); ?>" />
+                                <?php if ($image): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                 <?php endif; ?>
                             </div>
                         <?php endwhile; ?>

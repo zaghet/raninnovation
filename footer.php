@@ -1,6 +1,6 @@
 </div><!-- #content -->
 
-<footer id="footer" class="site-footer">
+<footer id="footer" class="site-footer" style="background-color:white;">
     <div class="container py-5">
         <div class="row align-items-start">
             <!-- Colonna Logo e Info -->

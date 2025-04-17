@@ -1,15 +1,59 @@
 section.block__gallery {
-    .mySwiper {
-        width: 100%;
-        height: auto;
+  .mySwiper {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    height: auto;
+
+    .swiper-slide {
+      width: 500px !important;
+      height: 300px !important;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       
-        .swiper-slide {
-          text-align: center;
-          img {
-            max-width: 100%;
-            height: auto;
-          }
-        }
+      img {
+        max-width: 100% !important;
+        min-height: 100% !important;
+        // height: auto;
+        // display: block;
+        object-fit: cover;
       }
-      
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 50px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 40px; 
+      height: 40px;
+
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &::after {
+        display: none; // Nasconde l'icona di default di Swiper
+      }
+    }
+
+    .swiper-button-prev {
+      background-image: url('@/img/gallery-button-prev.svg');
+      left: 1px;
+    }
+
+    .swiper-button-next {
+      background-image: url('@/img/gallery-button-next.svg');
+      right: 1px;
+    }
+  }
 }
