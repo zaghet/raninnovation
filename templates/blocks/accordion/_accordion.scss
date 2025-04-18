@@ -38,5 +38,8 @@ section.block__accordion {
     &-footer {
       color: $dark;
     }
+    .collapse {
+      padding: 2rem 1rem;
+    }
   }
 }

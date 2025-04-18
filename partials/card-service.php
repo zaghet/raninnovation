@@ -15,7 +15,7 @@ if (!$colore_testo) {
 ?>
 
 <div class="col-xs-12 col-md-6 col-lg-4 m-0 p-0">
-    <article id="post-<?php the_ID(); ?>" <?php post_class('card card--loop custom-post-card text-' . esc_attr($colore_testo)); ?> style="background-color: <?php echo esc_attr($colore_sfondo); ?>;">
+    <article id="post-<?php the_ID(); ?>" <?php post_class('card card--loop custom-post-card text-' . esc_attr($colore_testo)); ?> style="background-color: <?php echo esc_attr($colore_sfondo); ?>; border:0;">
         <?php 
         $categories = get_the_category();
         if ( ! empty( $categories ) ) {
@@ -27,7 +27,8 @@ if (!$colore_testo) {
             if ( has_post_thumbnail() ) {
                 echo '<div class="post-thumbnail">';
                 echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-                the_post_thumbnail('card');  
+                $thumbnail = get_the_post_thumbnail(null, 'card', ['style' => 'width: 30%;']);
+                echo $thumbnail;
                 echo '</a>';
                 echo '</div>';
             }

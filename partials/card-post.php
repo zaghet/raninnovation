@@ -3,7 +3,7 @@
  * Template partial for displaying post in loop
  */
 ?>
-<div class="col-xs-12 col-md-6 my-3">
+<div class="col-xs-12 col-md-6 my-3" style="margin-bottom:100px !important;">
     <article id="post-<?php the_ID(); ?>" <?php post_class('card card--loop'); ?>>
         <?php   
         if ( has_post_thumbnail() ) {
