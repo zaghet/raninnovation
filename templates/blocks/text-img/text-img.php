@@ -51,7 +51,7 @@ $reverse_sections = get_field('reverse_sections');
                     <?php endif; ?>
                 </div>
                 <!-- Primo div (col-md-5) dopo -->
-                <div class="col-xs-12 col-md-5 p-10 <?php echo esc_attr('bg-' . $bg_color); ?>">
+                <div class="col-xs-12 col-md-5 p-10 d-flex flex-column align-items-start justify-content-center <?php echo esc_attr('bg-' . $bg_color); ?>">
                     <?php if (!empty($icon)): ?>
                         <img src="<?php echo esc_url($icon['url']); ?>" class="icon pb-5" alt="<?php echo esc_attr($icon['alt']); ?>" />
                     <?php endif; ?>
@@ -61,7 +61,7 @@ $reverse_sections = get_field('reverse_sections');
                 </div>
             <?php else: // Ordine normale ?>
                 <!-- Primo div (col-md-5) prima -->
-                <div class="col-xs-12 col-md-5 p-10 <?php echo esc_attr('bg-' . $bg_color); ?>">
+                <div class="col-xs-12 col-md-5 p-10 d-flex flex-column align-items-start justify-content-center <?php echo esc_attr('bg-' . $bg_color); ?>">
                     <?php if (!empty($icon)): ?>
                         <img src="<?php echo esc_url($icon['url']); ?>" class="icon pb-5" alt="<?php echo esc_attr($icon['alt']); ?>" />
                     <?php endif; ?>

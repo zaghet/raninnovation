@@ -48,6 +48,12 @@ $text_3 = get_field('hero-page_text_3');
 $img_2 = get_field('hero-page_img_2');
 $show_after = get_field('show_overlay');
 $rectangles = get_field('hero-page_rectangles');
+$has_rectangles = !empty($rectangles);
+if (!empty($rectangles)) {
+    $bg_style .= ' margin-bottom: 100px;';
+} else {
+    $bg_style .= ' margin-bottom: 0;';
+}
 ?>
 
 <section <?php echo $anchor; ?> 

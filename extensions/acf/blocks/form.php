@@ -3,9 +3,8 @@ add_action('acf/init', function() {
     \TST\ACF::register_block('form', array(
         'title'             => __('Form'),
         'description'       => __('A Form gravityforms block.'),
-        'icon' 				=> '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-input-cursor" viewBox="0 0 16 16">
-  <path d="M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/>
-  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13A.5.5 0 0 1 8 1"/>
+        'icon' 				=> '<svg width="16" height="16" viewBox="0 0 16 16"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image">
+<path d="M8 12.216L12.944 15.2L11.632 9.576L16 5.792L10.248 5.304L8 0L5.752 5.304L0 5.792L4.368 9.576L3.056 15.2L8 12.216Z" fill="currentColor"/>
 </svg>',
         'keywords'          => array('form'),
     ));

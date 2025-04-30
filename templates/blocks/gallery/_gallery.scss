@@ -7,53 +7,56 @@ section.block__gallery {
     height: auto;
 
     .swiper-slide {
-      width: 500px !important;
-      height: 300px !important;
-      overflow: hidden;
+      overflow: visible;
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      
+    
+      // qui forziamo una dimensione minima delle slide
+      min-width: 300px; // o quello che ti serve
+      min-height: 300px;
+
       img {
-        max-width: 100% !important;
-        min-height: 100% !important;
-        // height: auto;
-        // display: block;
-        object-fit: cover;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: unset;
+        display: block;
       }
+    }          
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px; 
+    height: 40px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    &::after {
+      display: none; // Nasconde l'icona di default di Swiper
     }
+  }
 
-    .swiper-wrapper {
-      margin-bottom: 50px;
-    }
+  .swiper-button-prev {
+    background-image: url('@/img/gallery-button-prev.svg');
+    left: 1px;
+  }
 
-    .swiper-button-prev,
-    .swiper-button-next {
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 40px; 
-      height: 40px;
-
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
-
-      &::after {
-        display: none; // Nasconde l'icona di default di Swiper
-      }
-    }
-
-    .swiper-button-prev {
-      background-image: url('@/img/gallery-button-prev.svg');
-      left: 1px;
-    }
-
-    .swiper-button-next {
-      background-image: url('@/img/gallery-button-next.svg');
-      right: 1px;
-    }
+  .swiper-button-next {
+    background-image: url('@/img/gallery-button-next.svg');
+    right: 1px;
   }
 }

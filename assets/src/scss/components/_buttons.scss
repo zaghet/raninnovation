@@ -1,41 +1,33 @@
 .btn-outline-primary {
     --bs-btn-color: $gray-800;
     --bs-btn-border-color: none;
-    --bs-btn-hover-color: none;
+    --bs-btn-hover-color: $gray-800;
     --bs-btn-hover-bg: none;
     --bs-btn-hover-border-color: none;
-    --bs-btn-focus-shadow-rgb: none;
-    --bs-btn-active-color: none;
-    --bs-btn-active-bg: $yellow;
-    --bs-btn-active-border-color: none;
-    --bs-btn-active-shadow: none;
-    --bs-btn-disabled-color: none;
-    --bs-btn-disabled-bg: none;
-    --bs-btn-disabled-border-color: none;
     --bs-gradient: none;
+  
     border-bottom: 1px solid $gray-800;
-    padding-left: .3rem;
-    padding-right: .3rem;
-    padding-bottom: .3rem;
-
+    padding: 0 0.3rem 0.3rem;
+  
     &::after {
-        content: url(/static/img/arrow-small.svg);
-        padding-left: .7rem;
+      content: url(/static/img/arrow-small.svg);
+      padding-left: 0.7rem;
     }
-}
+  }
+  
 
 .btn-outline-primary-yellow {
-    --bs-btn-color: #FFBC00;
+    --bs-btn-color: $yellow;
     --bs-btn-border-color: transparent;
-    --bs-btn-hover-color: #FFBC00;
+    --bs-btn-hover-color: $yellow;
     --bs-btn-hover-bg: transparent;
     --bs-btn-hover-border-color: transparent;
     --bs-btn-focus-shadow-rgb: transparent;
-    --bs-btn-active-color: #FFBC00;
+    --bs-btn-active-color: $yellow;
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: transparent;
     --bs-btn-active-shadow: none;
-    --bs-btn-disabled-color: #FFBC00;
+    --bs-btn-disabled-color: $yellow;
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: transparent;
     --bs-gradient: none;
@@ -49,7 +41,7 @@
     &:hover,
     &:focus,
     &:active {
-        color: #FFBC00 !important;
+        color: $yellow !important;
         background-color: transparent !important;
         box-shadow: none !important;
         border-bottom: 1px solid $yellow;
@@ -85,21 +77,29 @@
 }
 
 .btn-primary {
+    color: $gray-800;
+    background-color: $yellow;
+    border: none;
+    padding: .75rem 1.5rem;
     display: inline-flex;
     align-items: center;
-    
+    transition: all 0.2s ease;
+  
     &::after {
-        content: url(/static/img/arrow-right-big.svg);
-        padding-left: .7rem;
-        display: inline-block;
-        height: 25px;
+      content: url(/static/img/arrow-right-big.svg);
+      padding-left: .7rem;
     }
-}
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }  
 
 .btn-download {
     display: inline-flex;
     align-items: center;
-    background-color: #FFBC00;
+    background-color: $yellow;
     
     &::after {
         content: url(/static/img/icon-download.svg);
@@ -112,7 +112,7 @@
     &:focus,
     &:active {
         color: $gray-800 !important;
-        background-color: #FFBC00 !important;
+        background-color: $yellow !important;
         box-shadow: none !important;
         border: 1px solid $gray-800;
     }

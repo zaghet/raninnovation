@@ -3,7 +3,9 @@ add_action('acf/init', function() {
     \TST\ACF::register_block('offcanvas-card', array(
         'title'             => __('Offcanvas Card'),
         'description'       => __('A card block open in Offcanvas.'),
-        'icon' 				=> '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/></svg>',
+        'icon' => '<svg width="16" height="16" viewBox="0 0 16 16"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-image">
+<path d="M8 12.216L12.944 15.2L11.632 9.576L16 5.792L10.248 5.304L8 0L5.752 5.304L0 5.792L4.368 9.576L3.056 15.2L8 12.216Z" fill="currentColor"/>
+</svg>',
         'keywords'          => array('offcanvas','card'),
     ));
 });

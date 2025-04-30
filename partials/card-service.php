@@ -27,7 +27,7 @@ if (!$colore_testo) {
             if ( has_post_thumbnail() ) {
                 echo '<div class="post-thumbnail">';
                 echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
-                $thumbnail = get_the_post_thumbnail(null, 'card', ['style' => 'width: 30%;']);
+                $thumbnail = get_the_post_thumbnail(null, 'card', ['style' => 'width: 30%; height: auto;']);
                 echo $thumbnail;
                 echo '</a>';
                 echo '</div>';
