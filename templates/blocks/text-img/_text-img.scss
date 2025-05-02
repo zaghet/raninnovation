@@ -8,4 +8,24 @@ section.block__text-img {
         background-color: #DEDEDF !important; 
     }
 
+    .image-wrapper {
+        position: relative;
+      
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+    }      
+
+    .caption {
+        padding: .5rem .7rem;
+        position: absolute !important;
+        bottom: 0;
+        font-size: small;
+        background-color: white;
+        margin: .5rem;
+        border-radius: 0;
+    }
+
 }

@@ -49,7 +49,7 @@ $repeater = get_field('repeater_logo-text');
                     <div class="col-12 col-md-6 mb-4">
                         <div class="repeater-item p-5">
                             <?php if (!empty($img)): ?>
-                                <img src="<?php echo esc_url($img['url']); ?>" class="w-50 pb-5" alt="<?php echo esc_attr($img['alt']); ?>" />
+                                <img src="<?php echo esc_url($img['url']); ?>" class="w-50 py-5" alt="<?php echo esc_attr($img['alt']); ?>" />
                             <?php endif; ?>
 
                             <?php if ($text): ?>

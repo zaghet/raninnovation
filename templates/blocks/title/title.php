@@ -38,7 +38,7 @@ $title = get_field('title_title');
 $text = get_field('title_text');
 
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
+<section id="title" <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container-xs">
         <?php if ($title) : ?> 
             <h2 class="text-center"><?php echo esc_html($title); ?></h2>

@@ -28,6 +28,13 @@ section.block__gallery {
     }          
   }
 
+  .image-caption {
+    position: absolute;
+    left: 0;
+    bottom: 1rem;
+    font-size: small;
+  }
+
   .swiper-wrapper {
     margin-bottom: 50px;
   }

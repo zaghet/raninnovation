@@ -38,7 +38,7 @@ $title = get_field('texts_title');
 $texts = get_field('texts');
 
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
+<section id="texts" <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">

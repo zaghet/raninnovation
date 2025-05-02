@@ -1,4 +1,9 @@
 .block__texts {
+
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  
   .two-columns {
     @include media-breakpoint-up(md) {
       column-count: 2;

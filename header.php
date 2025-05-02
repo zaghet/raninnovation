@@ -33,5 +33,5 @@
 
   </header><!-- #masthead -->
 
-  <div id="content" class="site-content position-relative">
+  <div id="content" class="site-content position-relative pt-10">
     <?php do_action( 'tst_before_content' );?>

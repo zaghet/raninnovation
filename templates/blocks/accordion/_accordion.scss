@@ -12,11 +12,14 @@ section.block__accordion {
   .left {
     padding: 5rem;
     background-color: #FFB800;
+    position: relative;
 
-    &::after {
+    &::before {
       content: url(@/img/hexagons-2.svg); 
       position: absolute;
       left: 0; 
+      bottom: 0;
+      pointer-events: none;
     }
   }
 

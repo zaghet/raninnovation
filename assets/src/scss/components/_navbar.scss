@@ -71,14 +71,14 @@ nav.navbar {
   
         // Menu item attivo (pagina corrente)
         &.current-menu-item > a.nav-link {
-          background-color: #f1b73b;
+          background-color: $yellow-500;
           text-decoration: none;
         }
   
         a:hover,
         a:active {
           text-decoration: none;
-          background-color: #f1b73b;
+          background-color: $yellow-500;
         }
   
         a:visited {

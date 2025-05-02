@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sliders.forEach(slider => {
         const swiperInstance = new Swiper(slider, {
-            slidesPerView: 4, // Mostra 4 loghi per viewport
+            slidesPerView: 2, // Mostra 2 loghi per viewport
             spaceBetween: 30, // Spazio tra le slide
             loop: true, // Loop infinito
             grabCursor: true, // Cambia il cursore per il drag
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             },
             breakpoints: {
-                1024: { slidesPerView: 4, spaceBetween: 20 },
-                768: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
                 600: { slidesPerView: 2, spaceBetween: 20 },
                 400: { slidesPerView: 1, spaceBetween: 20 },
             },

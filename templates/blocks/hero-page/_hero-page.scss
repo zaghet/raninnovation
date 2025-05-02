@@ -80,7 +80,7 @@ section.block__hero-page {
 
         p {
             color: $gray-800;
-            font-size: small;
+            font-size: medium;
         }
 
         @include media-breakpoint-down(lg) {

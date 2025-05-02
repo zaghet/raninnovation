@@ -7,8 +7,8 @@
     <div class="container">
 
         <?php if (!empty($logo)): ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand me-2">
-                <img class="header" src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand me-2 p-2">
+                <img style="height:75px;" class="header" src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
             </a>
         <?php endif; ?>
 

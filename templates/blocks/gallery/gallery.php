@@ -58,15 +58,20 @@ $image = get_field('image');
             <?php if (have_rows('slider_gallery')): ?>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <?php while (have_rows('slider_gallery')): the_row(); 
-                            $image = get_sub_field('image')
-                        ?>
-                            <div class="swiper-slide">
-                                <?php if ($image): ?>
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                                <?php endif; ?>
-                            </div>
-                        <?php endwhile; ?>
+                    <?php while (have_rows('slider_gallery')): the_row(); 
+                        $image = get_sub_field('image');
+                        $caption = get_sub_field('image_caption'); // Otteniamo la didascalia
+                    ?>
+                        <div class="swiper-slide text-center">
+                            <?php if ($image): ?>
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+                            <?php if ($caption): ?>
+                                <p class="image-caption"><?php echo esc_html($caption); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endwhile; ?>
+
                     </div>
 
                     <!-- Swiper Controls -->
