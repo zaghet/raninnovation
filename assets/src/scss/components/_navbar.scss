@@ -1,5 +1,9 @@
 .site-header__bottom{
 
+    .language-switcher {
+      display: none;
+    }
+
     div.wrapper-menu-mobile{
         background-color: #eeeeee;
         height: calc(100vh - 200px);

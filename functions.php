@@ -74,3 +74,12 @@ add_filter( 'wpsl_admin_marker_dir', 'custom_admin_marker_dir' );
 function custom_admin_marker_dir() {
     return get_stylesheet_directory() . '/wpsl-markers/';
 }
+
+add_filter( 'wpsl_js_settings', 'custom_js_settings' );
+
+function custom_js_settings( $settings ) {
+
+    $settings['startMarker'] = '';
+
+    return $settings;
+}

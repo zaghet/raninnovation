@@ -65,10 +65,8 @@ class POLYLANG {
 
     public function register_translations(){
         if(function_exists('pll_register_string')):
-
-            pll_register_string("cerca", "Cerca", "tst", false);
-            pll_register_string("prodotti", "Prodotti", "tst", false);
-
+            // CARD ARTICLE
+            pll_register_string("button card", "Scopri il servizio", "tst", false);
         endif;
     }
 
