@@ -51,3 +51,26 @@ require_once('library/aq_resizer.php');
 include( 'core/main.php' );
 
 new \TST\Main(['start' => __DIR__]);
+
+// // Sostituzione Marker WP Store Locator
+// add_filter( 'wpsl_admin_marker_dir', 'custom_admin_marker_dir' );
+
+// function custom_admin_marker_dir() {
+
+//     $admin_marker_dir = get_stylesheet_directory() . '/wpsl-markers/';
+//     define( 'WPSL_MARKER_URI', get_stylesheet_directory_uri() . '/wpsl-markers/' );
+//     error_log( 'Percorso marker: ' . $admin_marker_dir );
+//     return $admin_marker_dir;
+// }
+
+// Definire prima del caricamento del plugin
+if ( ! defined( 'WPSL_MARKER_URI' ) ) {
+    define( 'WPSL_MARKER_URI', get_stylesheet_directory_uri() . '/wpsl-markers/' );
+}
+
+// Sostituzione marker lato backend (admin)
+add_filter( 'wpsl_admin_marker_dir', 'custom_admin_marker_dir' );
+
+function custom_admin_marker_dir() {
+    return get_stylesheet_directory() . '/wpsl-markers/';
+}

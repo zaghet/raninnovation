@@ -6,6 +6,9 @@ section.block__form {
         display: block;
         // bottom: 0;
         z-index: -1;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
 
     legend, label.gfield_label.gform-field-label {

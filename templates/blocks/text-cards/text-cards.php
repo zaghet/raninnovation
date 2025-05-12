@@ -54,7 +54,7 @@ $text = get_field('text-cards_text');
                 
                 <?php if( !empty($button) && isset($button['url'], $button['title']) ): ?>
                     <a href="<?php echo esc_url($button['url']); ?>" 
-                       class="btn btn-primary animate__animated animate__delay-1s"
+                       class="btn btn-primary animate__animated animate__delay-1s mt-6"
                        data-scroll data-scroll-class="animate__fadeInLeft" 
                        style="--animate-delay:0.8s"
                        <?php echo !empty($button['target']) ? 'target="' . esc_attr($button['target']) . '"' : ''; ?>>
@@ -63,7 +63,7 @@ $text = get_field('text-cards_text');
                 <?php endif; ?>
             </div>
 
-            <div class="col-xs-12 col-lg-8">
+            <div class="col-xs-12 col-lg-8 right">
                 <?php if( have_rows('text-cards_section') ): ?>
                     <div class="row cards">
                         <?php while( have_rows('text-cards_section') ): the_row(); 

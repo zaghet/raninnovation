@@ -47,7 +47,7 @@ $form = get_field('form');
 // $form = get_field('form_title');
 
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
+<section id="form" <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
     <div class="container py-10">
         <div class="row">
             <div class="col-xs-12 col-md-7 col-lg-8 mb-5 mb-md-0">

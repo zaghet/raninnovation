@@ -3,7 +3,8 @@
  * Template partial for displaying post in loop
  */
 ?>
-<div class="col-xs-12 col-md-6 my-3" style="margin-bottom:100px !important;">
+
+<div class="col-xs-12 col-md-6">
     <article id="post-<?php the_ID(); ?>" <?php post_class('card card--loop'); ?>>
         <?php   
         if ( has_post_thumbnail() ) {
@@ -18,7 +19,7 @@
             <h5><?php the_title(); ?></h5>
             <?php 
             echo '<div class="post-excerpt">';
-             echo wp_trim_words( get_the_excerpt(), 10, '...' );
+            echo wp_trim_words( get_the_excerpt(), 10, '...' );
             echo '</div>';
             ?>
             <a class="btn btn-underline d-flex align-items-center text-nowrap" href="<?php the_permalink(); ?>">

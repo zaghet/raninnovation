@@ -17,7 +17,9 @@ section.block__slider-logo {
 
         // Stili per le slide
         .swiper-slide {
-            width: 400px !important;
+            @include media-breakpoint-up(md) {
+                width: 400px !important;
+            }
             display: flex;
             justify-content: center;
             align-items: center;
@@ -27,7 +29,7 @@ section.block__slider-logo {
             img {
                 max-width: 100%;
                 height: auto;
-                max-height: 80px; // Limita l'altezza dei loghi per uniformità
+                max-height:200px; // Limita l'altezza dei loghi per uniformità
                 object-fit: contain;
             }
         }
@@ -35,13 +37,13 @@ section.block__slider-logo {
         // Paginazione 
         .swiper-pagination {
 
-            display: none; // Nasconde la paginazione di default
+            // display: none; // Nasconde la paginazione di default
             @media (max-width: 1024px) {
                 display: flex; // Mostra la paginazione solo su schermi più piccoli
             }
             
             position: relative;
-            left: 30% !important;
+            // left: 30% !important;
             // transform: translateX(-50%);
             justify-content: center;
             margin-top: 50px;

@@ -26,6 +26,9 @@ section.block__accordion {
   .right {
     padding: 5rem;
     background-color: white;
+    @include media-breakpoint-down(lg) {
+      padding: 3rem;
+    }
   }
 
   .accordion {

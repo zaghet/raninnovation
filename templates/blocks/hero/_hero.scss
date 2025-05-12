@@ -1,6 +1,12 @@
 section.block__hero {
     padding: 0 !important;
     position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    @include media-breakpoint-down(md) {
+        height: 60vh;
+    }
 
     .video-wrapper {
         position: absolute;
@@ -8,27 +14,62 @@ section.block__hero {
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden;
         z-index: -1;
+        overflow: hidden;
+        
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); // nero semi-trasparente
+            z-index: 1;
+            pointer-events: none;
+        }
 
         .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; // 16:9 ratio (9 / 16 = 0.5625)
-            height: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; // 16:9 ratio
+            transform: translate(-50%, -50%);
             overflow: hidden;
-          
-            iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
+
+            @media (max-aspect-ratio: 16/9) {
+                width: 177.78vh; // 100 / (9/16)
+                height: 100vh;
             }
-        }          
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                pointer-events: none;
+            }
+        }
+
+        .image-background {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
     }
+
     .container {
+        position: relative;
+        z-index: 1;
         padding: 15% 0 10% 0;
         margin-top: -5%;
+
+        @include media-breakpoint-down(lg) {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
     }
 }

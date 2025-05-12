@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesPerView: 2, // Mostra 2 loghi per viewport
             spaceBetween: 30, // Spazio tra le slide
             loop: true, // Loop infinito
+            loopAdditionalSlides: 2,
             grabCursor: true, // Cambia il cursore per il drag
             pagination: {
                 el: slider.querySelector(".swiper-pagination"),

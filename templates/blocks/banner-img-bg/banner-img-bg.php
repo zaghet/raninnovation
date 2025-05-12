@@ -51,14 +51,14 @@ $bg_style = $img_url ? "background-image: url('$img_url'); background-size: cove
     <div class="bg-overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-md-12 col-lg-6 mb-5">
                     <?php if ($title): ?>
                         <h1><?php echo esc_html($title); ?></h1>
                     <?php endif; ?>
                 </div> 
-                <div class="col-xs-12 col-md-6">
+                <div class="col-md-12 col-lg-6">
                 <?php if ($text): ?>
-                    <div><?php echo wp_kses_post($text); ?></div>
+                    <div class="mb-5"><?php echo wp_kses_post($text); ?></div>
                 <?php endif; ?>
                     
                     <?php if (!empty($button) && isset($button['url'], $button['title'])): ?>

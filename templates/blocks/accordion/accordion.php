@@ -51,17 +51,17 @@ $button = get_field('accordion_button');
         <div class="row">
             <div class="col-xs-12 col-md-5 left">
                 <?php if($title):?>
-                <h2><?php echo $title; ?></h2>
+                <h2 class="mb-5"><?php echo $title; ?></h2>
                 <?php endif; ?>
                 <?php if($desc):?>
-                <p><?php echo $desc; ?></p>
+                <p class="mb-5"><?php echo $desc; ?></p>
                 <?php endif; ?>
                 <?php if( !empty($button) && isset($button['url'], $button['title']) ): ?>
                     <a href="<?php echo esc_url($button['url']); ?>" 
-                       class="btn btn-secondary animate__animated animate__delay-1s"
-                       data-scroll data-scroll-class="animate__fadeInLeft" 
-                       style="--animate-delay:0.8s"
-                       <?php echo !empty($button['target']) ? 'target="' . esc_attr($button['target']) . '"' : ''; ?>>
+                    class="btn btn-secondary animate__animated animate__delay-1s"
+                    data-scroll data-scroll-class="animate__fadeInLeft" 
+                    style="--animate-delay:0.8s"
+                    <?php echo !empty($button['target']) ? 'target="' . esc_attr($button['target']) . '"' : ''; ?>>
                         <?php echo esc_html($button['title']); ?>
                     </a>
                 <?php endif; ?>

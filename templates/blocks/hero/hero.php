@@ -42,8 +42,9 @@ $button = get_field('hero_button');
 <section <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?> video-container">
     <?php 
     $video_url = get_field('hero_video_url'); 
+    $background_image = get_field('hero_background_image'); // campo immagine ACF (tipo: immagine)
+
     if ($video_url) :
-        // Estrai l'ID del video
         preg_match('/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]+)/', $video_url, $matches);
         if (!empty($matches[1])) :
             $video_id = $matches[1];
@@ -60,8 +61,15 @@ $button = get_field('hero_button');
         </div>
     <?php 
         endif;
-    endif; 
+    elseif ($background_image) :
+        $image_url = $background_image['url'];
     ?>
+        <div class="video-wrapper">
+            <div class="image-background" style="background-image: url('<?php echo esc_url($image_url); ?>');">
+                <!-- Eventuale contenuto sovrapposto -->
+            </div>
+        </div>
+    <?php endif; ?>
 
     <div class="container">
         <div class="row">

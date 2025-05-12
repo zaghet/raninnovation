@@ -1,5 +1,12 @@
 section.block__text-img {
 
+    .flex-column {
+        padding: 7rem;
+        @include media-breakpoint-down(lg) {
+            padding: 3rem;
+        }
+    }
+
     .bg-yellow { 
         background-color: #FFBC00 !important; 
     }
