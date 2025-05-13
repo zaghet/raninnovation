@@ -40,7 +40,7 @@ if (!$colore_testo) {
             echo '</div>';
             ?>
             <a class="btn btn-primary btn-lg d-flex align-items-center text-nowrap" href="<?php the_permalink(); ?>">
-                Scopri il servizio
+                <?php pll_e('Scopri il servizio') ?>
             </a>
         </div>
     </article>

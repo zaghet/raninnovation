@@ -66,7 +66,7 @@
     </div>
     
     <!-- Copyright Section -->
-    <div class="footer-bottom p-3" style="background-color: #f1b73b;">
+    <div class="footer-bottom p-3" style="background-color: #FFB800;">
         <div class="row">
             <div class="col-md-6 col-xs-12">
                 <!-- <p class="m-0">&copy; 2024 Copyright - RAN Innovation</p> -->

@@ -67,6 +67,7 @@ class POLYLANG {
         if(function_exists('pll_register_string')):
             // CARD ARTICLE
             pll_register_string("button card", "Scopri il servizio", "tst", false);
+            pll_register_string("button card article", "Leggi di più", "tst", false);
         endif;
     }
 

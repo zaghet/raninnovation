@@ -23,7 +23,7 @@
             echo '</div>';
             ?>
             <a class="btn btn-underline d-flex align-items-center text-nowrap" href="<?php the_permalink(); ?>">
-                Leggi di più
+                <?php pll_e('Leggi di più') ?>
             </a>
         </div>
     </article>

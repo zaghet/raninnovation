@@ -17,6 +17,34 @@ if( ! class_exists( '\TST\ServicePostType' ) ) {
             add_action('save_post', array($this, 'salva_colore_sfondo'));
             add_action('save_post', array($this, 'salva_colore_testo')); // Aggiunto per salvare il colore del testo
             add_shortcode('tst_snippet','\TST\ServicePostType::getSnippet');
+
+            add_filter('tst_loop_content_partial' , array($this, 'loop_content_partial'), 10, 2);
+
+            add_action('tst_page_content_before', array($this, 'before_loop'), 10);
+        }
+
+        function before_loop() {
+            global $post, $wp_query;
+            if (is_post_type_archive('service')) {
+
+               $page_id = pll_get_post(get_page_by_path('servizi')->ID);
+               $content = get_the_content(false, false, $page_id);
+                $blogBlocks = parse_blocks($content);
+                foreach($blogBlocks as $block){
+                    echo render_block($block);
+                }
+            }
+
+        }
+
+        function loop_content_partial($template, $post_type) {
+            if ( $post_type === 'service' && file_exists( TST_PARTIAL_PATH . '/card-service.php' ) ) {
+                return 'service';
+            }
+            // if ( file_exists( TST_PARTIAL_PATH . '/' . Content::PARTIAL_LOOP_PREFIX . '-' . $post_type . '.php' ) ) {
+            //     return $post_type;
+            // }
+            return $template;
         }
 
         // Metabox per il colore di sfondo
@@ -197,3 +225,7 @@ if( ! class_exists( '\TST\ServicePostType' ) ) {
 }
 new ServicePostType;
 }
+
+
+
+
