@@ -89,10 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 3,
       spaceBetween: 30,
       loop: true,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 2000,
+      //   disableOnInteraction: false,
+      // },
       preloadImages: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
