@@ -51,23 +51,18 @@ $button = get_field('slider-logo_btn');
             <div class="slider-text text-center"><?php echo wp_kses_post($text); ?></div>
         <?php endif; ?>
 
-        <?php if ($slider) : ?>
-            <div class="swiper slider-logo">
+        <?php if( $slider ) : ?>
+            <div class="logo-slider swiper">
                 <div class="swiper-wrapper">
-                    <?php foreach ($slider as $logo) : ?>
-                        <?php 
-                        $img = $logo['slider-logo_logo']; // Recupera l'immagine del logo
-                        if ($img) : ?>
-                            <div class="swiper-slide">
-                                <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
+                    <?php foreach( $slider as $row ) :
+                        $logo = $row['slider-logo_logo'];
+                        if ($logo): ?>
+                            <div class="swiper-slide d-flex align-items-center justify-content-center">
+                                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="img-fluid" />
                             </div>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                        <?php endif;
+                    endforeach; ?>
                 </div>
-                <!-- Paginazione e Navigazione -->
-                <div class="swiper-pagination"></div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
             </div>
         <?php endif; ?>
 

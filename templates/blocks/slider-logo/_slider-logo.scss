@@ -3,102 +3,125 @@ section.block__slider-logo {
     // @import "swiper/swiper-bundle";
 
     // Stili generali per il container dello slider
-    .slider-logo {
-        position: relative;
-        max-width: 100%;
-        overflow: hidden;
-        padding: 20px 0;
+    // .slider-logo {
+    //     position: relative;
+    //     max-width: 100%;
+    //     overflow: visible;
+    //     padding: 20px 0;
 
-        // Wrapper delle slide
-        .swiper-wrapper {
-            display: flex;
-            align-items: center;
-        }
+    //     // Wrapper delle slide
+    //     .swiper-wrapper {
+    //         display: flex;
+    //         align-items: center;
+    //     }
 
-        // Stili per le slide
-        .swiper-slide {
-            @include media-breakpoint-up(md) {
-                width: 400px !important;
-            }
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
+    //     // Stili per le slide
+    //     .swiper-slide {
+    //         // RIMUOVI: width: 400px !important;
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         text-align: center;
+    //         transition: transform 0.3s ease-in-out;
+          
+    //         img {
+    //           max-width: 100%;
+    //           height: auto;
+    //           max-height: 200px;
+    //           object-fit: contain;
+    //         }
+    //       }          
 
-            img {
-                max-width: 100%;
-                height: auto;
-                max-height:200px; // Limita l'altezza dei loghi per uniformità
-                object-fit: contain;
-            }
-        }
+    //     // Paginazione 
+    //     .swiper-pagination {
 
-        // Paginazione 
-        .swiper-pagination {
-
-            // display: none; // Nasconde la paginazione di default
-            @media (max-width: 1024px) {
-                display: flex; // Mostra la paginazione solo su schermi più piccoli
-            }
+    //         // display: none; // Nasconde la paginazione di default
+    //         @media (max-width: 1024px) {
+    //             display: flex; // Mostra la paginazione solo su schermi più piccoli
+    //         }
             
-            position: relative;
-            // left: 30% !important;
-            // transform: translateX(-50%);
-            justify-content: center;
-            margin-top: 50px;
+    //         position: relative;
+    //         // left: 30% !important;
+    //         // transform: translateX(-50%);
+    //         justify-content: center;
+    //         margin-top: 50px;
 
-            .swiper-pagination-bullet {
-                width: 10px;
-                height: 10px;
-                background-color: #bbb;
-                opacity: 0.5;
-                margin: 0 5px;
-                transition: all 0.3s ease;
+    //         .swiper-pagination-bullet {
+    //             width: 10px;
+    //             height: 10px;
+    //             background-color: #bbb;
+    //             opacity: 0.5;
+    //             margin: 0 5px;
+    //             transition: all 0.3s ease;
 
-                &-active {
-                    background-color: #333;
-                    opacity: 1;
-                }
-            }
+    //             &-active {
+    //                 background-color: #333;
+    //                 opacity: 1;
+    //             }
+    //         }
+    //     }
+
+    //     // // Pulsanti di navigazione
+    //     // .swiper-button-next,
+    //     // .swiper-button-prev {
+    //     //     width: 40px;
+    //     //     height: 40px;
+    //     //     background-color: rgba(0, 0, 0, 0.6);
+    //     //     color: white;
+    //     //     border-radius: 50%;
+    //     //     display: flex;
+    //     //     align-items: center;
+    //     //     justify-content: center;
+    //     //     transition: all 0.3s ease;
+
+    //     //     &::after {
+    //     //         font-size: 20px;
+    //     //     }
+
+    //     //     &:hover {
+    //     //         background-color: rgba(0, 0, 0, 0.8);
+    //     //     }
+    //     // }
+
+    //     // .swiper-button-next {
+    //     //     right: 10px;
+    //     // }
+
+    //     // .swiper-button-prev {
+    //     //     left: 10px;
+    //     // }
+    // }
+
+    // // Responsive design per migliorare il layout su schermi più piccoli
+    // @media (max-width: 768px) {
+    //     .swiper-slide img {
+    //         max-height: 60px;
+    //     }
+    // }
+
+    .logo-slider {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden; // evita overflow orizzontale
+      
+        .swiper-wrapper {
+          display: flex;
+          align-items: center;
         }
-
-        // // Pulsanti di navigazione
-        // .swiper-button-next,
-        // .swiper-button-prev {
-        //     width: 40px;
-        //     height: 40px;
-        //     background-color: rgba(0, 0, 0, 0.6);
-        //     color: white;
-        //     border-radius: 50%;
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center;
-        //     transition: all 0.3s ease;
-
-        //     &::after {
-        //         font-size: 20px;
-        //     }
-
-        //     &:hover {
-        //         background-color: rgba(0, 0, 0, 0.8);
-        //     }
-        // }
-
-        // .swiper-button-next {
-        //     right: 10px;
-        // }
-
-        // .swiper-button-prev {
-        //     left: 10px;
-        // }
-    }
-
-    // Responsive design per migliorare il layout su schermi più piccoli
-    @media (max-width: 768px) {
-        .swiper-slide img {
-            max-height: 60px;
+      
+        .swiper-slide {
+          flex-shrink: 0; // obbliga la larghezza costante
+          width: auto; // o rimuovi completamente la width
+          max-width: 200px;
+          img {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            display: block;
+          }
         }
-    }
+      }
+      
+            
 
 }
