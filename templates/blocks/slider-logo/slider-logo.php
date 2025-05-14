@@ -36,7 +36,8 @@ if( isset($block['full_height']) ) {
 //  get field
 $title = get_field('slider-logo_title');
 $text = get_field('slider-logo_text');
-$slider = get_field('slider-logo_slider');
+$images = get_field('slider-logo_slider');
+$image = get_field('slider-logo_logo');
 $button = get_field('slider-logo_btn');
 
 ?>
@@ -51,19 +52,22 @@ $button = get_field('slider-logo_btn');
             <div class="slider-text text-center"><?php echo wp_kses_post($text); ?></div>
         <?php endif; ?>
 
-        <?php if( $slider ) : ?>
-            <div class="logo-slider swiper">
-                <div class="swiper-wrapper">
-                    <?php foreach( $slider as $row ) :
-                        $logo = $row['slider-logo_logo'];
-                        if ($logo): ?>
-                            <div class="swiper-slide d-flex align-items-center justify-content-center">
-                                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" class="img-fluid" />
-                            </div>
-                        <?php endif;
-                    endforeach; ?>
+        <?php if (!empty($images) && is_array($images)): ?>
+        <div class="swiper image-slider">
+            <div class="swiper-wrapper">
+            <?php foreach ($images as $image): ?>
+                <div class="swiper-slide">
+                <?php if (!empty($image['slider-logo_logo']['url'])): ?>
+                    <img src="<?php echo esc_url($image['slider-logo_logo']['url']); ?>" 
+                        alt="<?php echo esc_attr($image['slider-logo_logo']['alt']); ?>" />
+                <?php endif; ?>
                 </div>
+            <?php endforeach; ?>
             </div>
+            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+        </div>
         <?php endif; ?>
 
         <a href="<?php echo esc_url($button['url']); ?>" 
