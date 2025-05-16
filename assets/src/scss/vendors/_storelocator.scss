@@ -18,9 +18,9 @@
     display: none;
 }
 
-div#wpsl-result-list {
-    display: none;
-}
+// div#wpsl-result-list {
+//     display: none;
+// }
 
 div#wpsl-wrap {
     margin: 0 !important;
@@ -32,9 +32,13 @@ div#wpsl-wrap {
 
 // #wpsl-gmap > div > div.gm-style > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(3) > div:nth-child(2) > img{
 //     display: none !important;
-// }
+// } 
 
 #wpsl-gmap img[src*="red@2x"] {
+    display: none !important;
+}
+
+.wpsl-direction-wrap {
     display: none !important;
 }
 
