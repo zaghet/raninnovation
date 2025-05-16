@@ -83,3 +83,7 @@ function custom_js_settings( $settings ) {
 
     return $settings;
 }
+
+function TST___e($string) {
+    echo esc_html__($string, 'raninnovation');
+}
