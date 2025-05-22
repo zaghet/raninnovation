@@ -184,7 +184,7 @@ if( ! class_exists( '\TST\ServicePostType' ) ) {
             'capability_type'       => 'page',
             'supports'              => ['title','editor', 'excerpt', 'thumbnail'],
             'taxonomies'            => [self::TAXONOMY_NAME],
-            'has_archive'           => TRUE,
+            'has_archive'           => 'services',
             'rewrite'               => ['slug' => 'servizi', 'with_front' => FALSE],
             'query_var'             => TRUE,
             'can_export'            => TRUE,
