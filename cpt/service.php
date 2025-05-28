@@ -4,6 +4,7 @@ if(!defined('ABSPATH') ) {
     exit; // Exit if accessed directly
 }
 
+
 if( ! class_exists( '\TST\ServicePostType' ) ) {
     class ServicePostType extends Main {
         const POST_TYPE_NAME    = 'service';
@@ -118,53 +119,53 @@ if( ! class_exists( '\TST\ServicePostType' ) ) {
             }
         }
 
-    // public static function RegisterTaxonomy(){
-    //     $args = [
-    //         'description'           => __('Categorie di ', 'tst' ) . self::POST_TYPE_NAME,
-    //         'public'                => FALSE,
-    //         'publicly_queryable'    => FALSE,
-    //         'hierarchical'          => FALSE,
-    //         'show_ui'               => TRUE,
-    //         'show_in_menu'          => TRUE,
-    //         'show_in_nav_menus '    => FALSE,
-    //         //'show_in_rest'          => FALSE,
-    //         //'rest_base'             => 'STRING',
-    //         //'rest_namespace'        => 'STRING',
-    //         //'rest_controller_class' => 'STRING',
-    //         'show_tagcloud'         => FALSE,
-    //         'show_in_quick_edit'    => TRUE,
-    //         'show_admin_column'     => true,
-    //         'meta_box_cb'           => 'post_categories_meta_box',
-    //         //'meta_box_sanitize_cb'    => 'CALLABLE',
-    //         'update_count_callback' => '_update_post_term_count',
-    //         'query_var'             => true,
-    //         'rewrite'               => FALSE,
-    //         /*'default_term'          => [
-    //             'name'                  => __('Thank You Messages','tst'),
-    //             'slug'                  => 'thank-you',
-    //             'description'           => __('Positively responding to a user request','tst'),
-    //             ],*/
-    //         'labels'                => [
-    //             'name'                          => _x('Categorie','taxonomy general name','tst'),
-    //             'singular_name'                 => _x('Categoria','taxonomy singular name','tst'),
-    //             'search_items'                  => __('Cerca categoria','tst'),
-    //             'popular_items'                 => __('Categorie popolari','tst'),
-    //             'all_items'                     => __('Tutte le categorie','tst'),
-    //             'parent_item'                   => NULL,
-    //             'parent_item_colon'             => NULL,
-    //             'edit_item'                     => __('Edit categoria','tst'),
-    //             'update_item'                   => __('Update categoria','tst'),
-    //             'add_new_item'                  => __('Add New categoria','tst'),
-    //             'new_item_name'                 => __('New categoria','tst'),
-    //             'separate_items_with_commas'    => __('Separate categoria with commas','tst'),
-    //             'add_or_remove_items'           => __('Add or remove categorie','tst'),
-    //             'choose_from_most_used'         => __('Choose from the most used categorie','tst'),
-    //             'not_found'                     => __('No categorie found.','tst'),
-    //             'menu_name'                     => __('Categorie','tst'),
-    //         ],
-    //     ];
-    //     register_taxonomy(self::TAXONOMY_NAME,[self::POST_TYPE_NAME],$args);
-    // }
+    public static function RegisterTaxonomy(){
+        $args = [
+            'description'           => __('Categorie di ', 'tst' ) . self::POST_TYPE_NAME,
+            'public'                => FALSE,
+            'publicly_queryable'    => FALSE,
+            'hierarchical'          => FALSE,
+            'show_ui'               => TRUE,
+            'show_in_menu'          => TRUE,
+            'show_in_nav_menus '    => FALSE,
+            //'show_in_rest'          => FALSE,
+            //'rest_base'             => 'STRING',
+            //'rest_namespace'        => 'STRING',
+            //'rest_controller_class' => 'STRING',
+            'show_tagcloud'         => FALSE,
+            'show_in_quick_edit'    => TRUE,
+            'show_admin_column'     => true,
+            'meta_box_cb'           => 'post_categories_meta_box',
+            //'meta_box_sanitize_cb'    => 'CALLABLE',
+            'update_count_callback' => '_update_post_term_count',
+            'query_var'             => true,
+            'rewrite'               => FALSE,
+            /*'default_term'          => [
+                'name'                  => __('Thank You Messages','tst'),
+                'slug'                  => 'thank-you',
+                'description'           => __('Positively responding to a user request','tst'),
+                ],*/
+            'labels'                => [
+                'name'                          => _x('Categorie','taxonomy general name','tst'),
+                'singular_name'                 => _x('Categoria','taxonomy singular name','tst'),
+                'search_items'                  => __('Cerca categoria','tst'),
+                'popular_items'                 => __('Categorie popolari','tst'),
+                'all_items'                     => __('Tutte le categorie','tst'),
+                'parent_item'                   => NULL,
+                'parent_item_colon'             => NULL,
+                'edit_item'                     => __('Edit categoria','tst'),
+                'update_item'                   => __('Update categoria','tst'),
+                'add_new_item'                  => __('Add New categoria','tst'),
+                'new_item_name'                 => __('New categoria','tst'),
+                'separate_items_with_commas'    => __('Separate categoria with commas','tst'),
+                'add_or_remove_items'           => __('Add or remove categorie','tst'),
+                'choose_from_most_used'         => __('Choose from the most used categorie','tst'),
+                'not_found'                     => __('No categorie found.','tst'),
+                'menu_name'                     => __('Categorie','tst'),
+            ],
+        ];
+        register_taxonomy(self::TAXONOMY_NAME,[self::POST_TYPE_NAME],$args);
+    }
 
     // Funzione per registrare il custom post type
     public static function RegisterPostType(){

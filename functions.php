@@ -76,3 +76,9 @@ function custom_js_settings( $settings ) {
 function TST___e($string) {
     echo esc_html__($string, 'raninnovation');
 }
+
+add_filter( 'wpsl_store_template', 'custom_store_template' );
+
+function custom_store_template( $template ) {
+    return get_stylesheet_directory() . '/wp-store-locator/store-listing.php';
+}
