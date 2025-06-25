@@ -74,7 +74,7 @@ $text = get_field('text-cards_text');
                             <div class="card">
                                 <?php if( $icon ): ?>
                                     <div class="icon">
-                                        <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                                        <img width="48px" height="48px" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
                                     </div>
                                 <?php endif; ?>
 
