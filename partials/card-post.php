@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="col-xs-12 col-md-6">
+<div class="col-xs-12 col-md-6 p-3">
     <article id="post-<?php the_ID(); ?>" <?php post_class('card card--loop'); ?>>
         <?php   
         if ( has_post_thumbnail() ) {
